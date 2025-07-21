@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <!--
     Student Name: Will Southard
-    File Name: hobby
+    File Name: hobby.html
     Date: 7/21/25
+    Description: Works/Portfolio page for Brock Swinson's personal website
 -->
-<html lang = "en">
+<html lang="en">
 <head>
-    <title>bs: example text</title>
+    <title>bs: works</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/styles.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts - Funnel Display for main content -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Main wrapper container for sticky footer layout -->
     <div id="wrapper">
 
-        <!--Use the header area for the website name or logo. header info should be static-->
+        <!-- Header with logo - responsive design for mobile/desktop -->
         <header>
             <div class="tab-desk">
                 <a href="index.html"><img src="images/bslogo.png" alt="bs logo"></a>
@@ -28,7 +31,7 @@
             </div>
         </header>
 
-        <!--Use the nav area to add hyperlinks to other pages within the website-->
+        <!-- Navigation menu with responsive design -->
         <nav>
             <ul>
                 <li><a href="index.html">home</a></li> 
@@ -37,24 +40,27 @@
             </ul>
         </nav>
 
-        <!--Use the main area to add the main content to the webpage-->
+        <!-- Main content area -->
         <main>
+            <!-- Introduction section with overview -->
             <section class="hobby-intro">
                 <h1>brock's works</h1>
                 <p>
-                    <!-- 150+ words intro to hobby -->
                     Brock Swinson is a freelance writer and author who hosts the podcast and YouTube series, Creative Principles, which features audio interviews from screenwriters, actors, and directors. Swinson has curated the combined advice from 200+ interviews for his debut non-fiction book 'Ink by the Barrel' which provides advice for those seeking a career as a prolific writer.
                 </p>
             </section>
 
+            <!-- Gallery section with latest videos and articles -->
             <section class="gallery">
-                <!-- div for latest videos -->
+                <!-- Latest videos section with dynamic YouTube content -->
                 <div id="latest-videos">
                     <h2>Latest Videos</h2>
                     <div class="video-list"></div>
                 </div>
-                <!-- Latest videos from Brock's YouTube channel -->
+                
+                <!-- JavaScript to fetch and display latest YouTube videos -->
                 <script>
+                    // Fetch latest videos from Brock's YouTube channel using RSS feed
                     fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?channel_id=UCBUux6BkhC-dtP4Vj1GcgMA')
                     .then(response => response.json())
                     .then(data => {
@@ -77,6 +83,7 @@
                         document.getElementById('latest-videos').querySelector('.video-list').innerHTML = html;                    });
                 </script>
 
+                <!-- Latest articles section with static content -->
                 <div id="latest-articles">
                     <h2>Latest Articles</h2>
                     <ul>
@@ -95,7 +102,7 @@
             </section>
         </main>
 
-        <!--Use the footer area to add webpage footer content-->
+        <!-- Site footer with copyright and contact information -->
         <footer>
             <p>&copy; Copyright 2025. All Rights Reserved.</p>
             <p><a href="mailto:brockswinson@gmail.com">brockswinson@gmail.com</a></p>

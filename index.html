@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <!--
     Student Name: Will Southard
-    File Name: index
+    File Name: index.html
     Date: 7/21/25
+    Description: Home page for Brock Swinson's personal website
 -->
-<html lang = "en">
+<html lang="en">
 <head>
     <title>bs: home</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/styles.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts - Funnel Display for main content -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Main wrapper container for sticky footer layout -->
     <div id="wrapper">
 
-        <!--Use the header area for the website name or logo. header info should be static-->
+        <!-- Header with logo - responsive design for mobile/desktop -->
         <header>
             <div class="tab-desk">
                 <a href="index.html"><img src="images/bslogo.png" alt="bs logo"></a>
@@ -28,7 +31,7 @@
             </div>
         </header>
 
-        <!--Use the nav area to add hyperlinks to other pages within the website-->
+        <!-- Navigation menu with responsive design -->
         <nav>
             <ul>
                 <li><a href="index.html">home</a></li> 
@@ -37,94 +40,114 @@
             </ul>
         </nav>
 
-        <!--Use the main area to add the main content to the webpage-->
+        <!-- Main content area -->
         <main>
-            <!-- Hero -->
+            <!-- Hero section with main image and title -->
             <section class="hero">
                 <img src="images/hero.jpg" alt="Hero image of Brock" />
                 <h1>brock swinson</h1>
             </section>
 
-        <!-- Two-column summary rows -->
-            <section class="row row--alt">
+            <!-- First row: Goals and Accomplishments (2 columns for desktop/tablet, 1 for mobile) -->
+            <section class="row">
+                <!-- Goals column with 250+ word content -->
                 <div class="goals">
                     <h2>goals</h2>
                     <p>
-                    <!-- 250+ words about goals, accomplishments, no Lorem Ipsum -->
-                        At 37, an aspiring screenwriter often reconnects with the youthful fervor that first ignited their passion for storytelling while embracing the discipline and strategic focus that only years of life experience can deliver. Their primary goal is to refine a distinctive voice—one that reflects unique perspectives shaped by years of observation and personal growth—so that their scripts stand out in a crowded marketplace. They strive to complete a compelling feature-length spec script that captures emotional truth, dramatic tension, and commercially viable hooks, all while adhering to industry formats and expectations. Simultaneously, they’re building a professional network through writers’ groups, screenwriting workshops, and industry events, aiming to foster relationships with peers, mentors, and potential producers or agents. Financial stability remains a practical concern, so balancing day-to-day employment with dedicated writing routines—waking early or carving out weekend marathons—also ranks high on the list. They aim to stay abreast of evolving distribution platforms, understanding how streaming services, short-form web series, podcasts, and virtual film festivals can serve as launchpads for emerging voices. They might set goals for measurable milestones—submitting to ten competitions in a year, completing monthly outlines, or securing at least three professional script notes. Ultimately, their overarching mission is to transform passion into profession: to see their characters leap off the page, to watch their stories come alive on screen, and to forge a sustainable career that marries creative fulfillment with industry recognition. Alongside creative ambitions, they set personal deadlines and hold themselves accountable to cultivate consistency, ongoing momentum, and sustainable growth.
+                        At 37, an aspiring screenwriter often reconnects with the youthful fervor that first ignited their passion for storytelling while embracing the discipline and strategic focus that only years of life experience can deliver. Their primary goal is to refine a distinctive voice—one that reflects unique perspectives shaped by years of observation and personal growth—so that their scripts stand out in a crowded marketplace. They strive to complete a compelling feature-length spec script that captures emotional truth, dramatic tension, and commercially viable hooks, all while adhering to industry formats and expectations. Simultaneously, they're building a professional network through writers' groups, screenwriting workshops, and industry events, aiming to foster relationships with peers, mentors, and potential producers or agents. Financial stability remains a practical concern, so balancing day-to-day employment with dedicated writing routines—waking early or carving out weekend marathons—also ranks high on the list. They aim to stay abreast of evolving distribution platforms, understanding how streaming services, short-form web series, podcasts, and virtual film festivals can serve as launchpads for emerging voices. They might set goals for measurable milestones—submitting to ten competitions in a year, completing monthly outlines, or securing at least three professional script notes. Ultimately, their overarching mission is to transform passion into profession: to see their characters leap off the page, to watch their stories come alive on screen, and to forge a sustainable career that marries creative fulfillment with industry recognition. Alongside creative ambitions, they set personal deadlines and hold themselves accountable to cultivate consistency, ongoing momentum, and sustainable growth.
                     </p>
                 </div>
+                
+                <!-- Accomplishments column with responsive table/list -->
                 <div class="accomplishments">
                     <h2>accomplishments</h2>
-                        <!-- Table for desktop/tablet, list for mobile -->
-                        <table class="tab-desk">
-                            <!-- use table rows here -->
-                                <thead>
-                                  <tr>
-                                    <th>Year</th>
-                                    <th>Activity</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <td>2009</td>
-                                    <td>Background work on One Tree Hill</td>
-                                  </tr>
-                                  <tr>
-                                    <td>2010</td>
-                                    <td>Creative Screenwriting Magazine (to present)</td>
-                                  </tr>
-                                  <tr>
-                                    <td>2012</td>
-                                    <td>Managed Free Bee, a local newspaper</td>
-                                  </tr>
-                                  <tr>
-                                    <td>2013</td>
-                                    <td>Editor in Chief at Rogue Valley Messenger</td>
-                                  </tr>
-                                  <tr>
-                                    <td>2014</td>
-                                    <td>Worked on TV shows, commercials, and music video sets in LA</td>
-                                  </tr>
-                                  <tr>
-                                    <td>2015</td>
-                                    <td>Began freelance writing and marketing for Russell Brunson at ClickFunnels and others</td>
-                                  </tr>
-                                  <tr>
-                                    <td>2023</td>
-                                    <td>Co-founder of Buzztown, a screenwriting and filmmaking community</td>
-                                  </tr>
-                                  <tr>
-                                    <td>2023</td>
-                                    <td>Founder of Blue Whistler Films</td>
-                                  </tr>
-                                </tbody>
-                        </table>
+                    <!-- Table for desktop/tablet viewports -->
+                    <table class="tab-desk">
+                        <thead>
+                          <tr>
+                            <th>Year</th>
+                            <th>Activity</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>2009</td>
+                            <td>Background work on One Tree Hill</td>
+                          </tr>
+                          <tr>
+                            <td>2010</td>
+                            <td>Creative Screenwriting Magazine (to present)</td>
+                          </tr>
+                          <tr>
+                            <td>2012</td>
+                            <td>Managed Free Bee, a local newspaper</td>
+                          </tr>
+                          <tr>
+                            <td>2013</td>
+                            <td>Editor in Chief at Rogue Valley Messenger</td>
+                          </tr>
+                          <tr>
+                            <td>2014</td>
+                            <td>Worked on TV shows, commercials, and music video sets in LA</td>
+                          </tr>
+                          <tr>
+                            <td>2015</td>
+                            <td>Began freelance writing and marketing for Russell Brunson at ClickFunnels and others</td>
+                          </tr>
+                          <tr>
+                            <td>2023</td>
+                            <td>Co-founder of Buzztown, a screenwriting and filmmaking community</td>
+                          </tr>
+                          <tr>
+                            <td>2023</td>
+                            <td>Founder of Blue Whistler Films</td>
+                          </tr>
+                        </tbody>
+                    </table>
 
-                        <ul class="mobile">
-                            <!-- same content as table, but for mobile -->
-                            <li>2009 - Background work on One Tree Hill</li>
-                            <li>2010 - Creative Screenwriting Magazine (to present)</li>
-                            <li>2012 - Managed Free Bee, a local newspaper</li>
-                            <li>2013 - Editor in Chief at Rogue Valley Messenger</li>
-                            <li>2014 - Worked on TV shows, commercials, and music video sets in LA</li>
-                            <li>2015 - Began freelance writing and marketing for Russell Brunson at ClickFunnels and others</li>
-                            <li>2023 - Co-founder of Buzztown, a screenwriting and filmmaking community</li>
-                            <li>2023 - Founder of Blue Whistler Films</li>
-                        </ul>
+                    <!-- List for mobile viewport -->
+                    <ul class="mobile">
+                        <li>2009 - Background work on One Tree Hill</li>
+                        <li>2010 - Creative Screenwriting Magazine (to present)</li>
+                        <li>2012 - Managed Free Bee, a local newspaper</li>
+                        <li>2013 - Editor in Chief at Rogue Valley Messenger</li>
+                        <li>2014 - Worked on TV shows, commercials, and music video sets in LA</li>
+                        <li>2015 - Began freelance writing and marketing for Russell Brunson at ClickFunnels and others</li>
+                        <li>2023 - Co-founder of Buzztown, a screenwriting and filmmaking community</li>
+                        <li>2023 - Founder of Blue Whistler Films</li>
+                    </ul>
                 </div>
-                
             </section>
 
-            
-            <!-- external link requirement -->
+            <!-- Second row: Additional content with images (alternate background) -->
+            <section class="row row--alt">
+                <!-- Creative work column with image -->
+                <div class="creative-work">
+                    <h2>creative work</h2>
+                    <img src="images/creativeprinciples.jpg" alt="Brock working on creative principles" />
+                    <p>
+                        Brock's creative journey spans multiple mediums and industries, from traditional journalism to modern digital marketing and screenwriting. His work with Russell Brunson at ClickFunnels demonstrated his ability to craft compelling narratives that drive engagement and conversion. This experience in marketing copywriting has directly influenced his screenwriting approach, where he focuses on creating emotionally resonant stories with clear dramatic stakes. His background in journalism has honed his ability to research deeply and present complex information in accessible ways, skills that translate beautifully to script development and character research. The founding of Buzztown represents his commitment to building community among fellow creatives, recognizing that the best work often emerges from collaboration and shared learning. His role as Editor in Chief at Rogue Valley Messenger showcased his leadership abilities and editorial judgment, qualities that serve him well as he develops his own production company, Blue Whistler Films. This entrepreneurial spirit, combined with his artistic vision, positions him uniquely in the industry as someone who understands both the creative and business aspects of filmmaking.
+                    </p>
+                </div>
+                
+                <!-- Filmmaking column with image -->
+                <div class="filmmaking">
+                    <h2>filmmaking</h2>
+                    <img src="images/FilmmakerFieldNotes.png" alt="Brock's filmmaker field notes" />
+                    <p>
+                        Brock's hands-on experience in the film industry began with background work on One Tree Hill, giving him firsthand insight into the collaborative nature of television production. His time working on various TV shows, commercials, and music video sets in Los Angeles provided invaluable exposure to different production scales and creative processes. This practical experience informs his writing, as he understands the realities of production constraints and the importance of writing scripts that can actually be filmed within budget and logistical limitations. His work with Blue Whistler Films represents the culmination of years of industry observation and learning, as he now has the opportunity to shepherd projects from concept to completion. The Filmmaker Field Notes project demonstrates his commitment to documenting and sharing knowledge with the broader filmmaking community, reflecting his belief in the importance of mentorship and knowledge transfer in creative industries. His approach to filmmaking emphasizes authentic storytelling, technical excellence, and community building, recognizing that successful projects require both artistic vision and practical execution.
+                    </p>
+                </div>
+            </section>
+
+            <!-- External link section -->
             <footer class="external-link">
                 <p>learn more: <a href="https://www.brockswinson.com/" target="_blank" rel="noopener">official site</a></p>
             </footer>
 
         </main>
 
-        <!--Use the footer area to add webpage footer content-->
+        <!-- Site footer with copyright and contact information -->
         <footer>
             <p>&copy; Copyright 2025. All Rights Reserved.</p>
             <p><a href="mailto:brockswinson@gmail.com">brockswinson@gmail.com</a></p>

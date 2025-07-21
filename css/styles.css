@@ -2,15 +2,30 @@
 Author: Will Southard
 Date: 7/21/25
 File Name: styles.css
+Description: Main stylesheet for Brock Swinson's personal website with responsive design
 */
 
-/*CSS Reset*/
+/* ===== CSS RESET ===== */
+/* Reset default margins, padding, and borders for consistent cross-browser styling */
 body, header, nav, main, footer, img, h1, h3, ul, table, td, th, tr, li, a, iframe{
     margin: 0;
     padding: 0;
     border: 0;
 }
 
+/* CSS Custom Properties (Variables) - Advanced CSS feature not covered in textbook */
+/* Provides consistent theming and easy color management across the site */
+:root {
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+    --accent-color: #f8f8f8;
+    --text-color: #000000;
+    --link-hover-color: #ffffff;
+    --link-hover-bg: #000000;
+}
+
+/* ===== LAYOUT STRUCTURE ===== */
+/* Sticky footer layout using flexbox */
 html, body {
     height: 100%;
 }
@@ -22,12 +37,13 @@ html, body {
 }
 
 main {
-    flex: 1;
+    flex: 1; /* Takes remaining space to push footer to bottom */
 }
 
-/*Style rules for body and images*/
+/* ===== BASE STYLES ===== */
+/* Body and image base styling */
 body {
-    background-color: #ffffff;
+    background-color: var(--secondary-color);
 }
 
 img {
@@ -35,9 +51,8 @@ img {
     display: block;
 }
 
-/*Style rules for mobile viewport*/
-
-/*Style rules to show mobile class and hide tab-desk class*/
+/* ===== RESPONSIVE DISPLAY CLASSES ===== */
+/* Mobile-first approach: show mobile, hide desktop by default */
 .mobile {
 	display: block;
 }
@@ -46,8 +61,8 @@ img {
 	display: none;
 }
 
-/*Style rules for header area*/
-
+/* ===== HEADER STYLES ===== */
+/* Logo styling for different viewport sizes */
 img {
     max-width: 15%;
     display: block;
@@ -60,6 +75,7 @@ img {
     margin: auto;
 }
 
+/* Mobile typography styles */
 .mobile h1 h3 {
 	padding: 2%;
 	text-align: center;
@@ -73,34 +89,37 @@ img {
 	font-family: "Funnel Display", sans-serif;
 }
 
-/*Style rules for navigation area*/
+/* ===== NAVIGATION STYLES ===== */
+/* Navigation container and list styling */
 nav {
-    background-color: #ffffff;
+    background-color: var(--secondary-color);
 }
 
 nav ul {
     list-style-type: none;
     text-align: center;
-    border-top: 0.2em solid #000000;
-    border-bottom: 0.2em solid #000000;
+    border-top: 0.2em solid var(--primary-color);
+    border-bottom: 0.2em solid var(--primary-color);
 }
 
+/* Navigation items - mobile layout (stacked) */
 nav li {
     display: block;
     font-size: 1.5em;
-    font-family: "Funnel Display", sans-serif;
+    font-family: "Georgia", serif; /* Different font for navigation */
     font-weight: bold;
-	border-top: 0.5px solid #000000;
+	border-top: 0.5px solid var(--primary-color);
 }
 
 nav li a {
     display: block;
-    color: #000000;
+    color: var(--text-color);
     padding: 0.5em 2em;
     text-decoration: none;
 }
 
-/*Style rules for main content*/
+/* ===== MAIN CONTENT STYLES ===== */
+/* Main content area styling */
 main {
     padding: 2%;
     font-family: "Funnel Display", sans-serif;
@@ -115,10 +134,45 @@ main h3 {
     padding: 2%;
 }
 
+main h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
 main ul {
     list-style-type: square;
 }
 
+/* ===== RESPONSIVE GRID LAYOUT ===== */
+/* Row and column layout for multi-column content */
+.row {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 2em 0;
+    background-color: var(--secondary-color);
+}
+
+.row--alt {
+    background-color: var(--accent-color);
+}
+
+.row > div {
+    flex: 1;
+    padding: 0 1em;
+}
+
+.row img {
+    max-width: 100%;
+    height: auto;
+    margin: 1em auto;
+    display: block;
+}
+
+/* ===== MOBILE-SPECIFIC STYLES ===== */
+/* Mobile list styling for accomplishments */
 ul.mobile {
     margin-left: 10%;
     max-width: 80%;
@@ -126,29 +180,15 @@ ul.mobile {
     padding-bottom: 1em;
 }
 
-.link {
-    color: #000000;
-    text-decoration: none;
-    font-weight: bold;
-    font-style: italic;
-}
-
-.action {
-    font-size: 1.75em;
-    font-weight: bold;
-    text-align: center;
-}
-
-.round {
-	border-radius: 6px;
-}
-
+/* General list styling */
 ul {
 	margin-left: 10%;
     max-width: 80%;
     text-align: left;
 }
 
+/* ===== HERO SECTION ===== */
+/* Hero image and title styling */
 .hero, .goals, .accomplishments {
     display: block;
     text-align: center;
@@ -163,28 +203,56 @@ ul {
     width: 100%;
 }
 
-.about-intro {
-    display: block;
-    text-align: center;
+/* ===== ABOUT PAGE STYLES ===== */
+/* About page layout and styling */
+.about-section {
+    padding: 2em 0;
 }
 
-.about-grid {
+.about-section h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 2em;
+}
+
+.about-content {
     display: flex;
     flex-direction: column;
+    gap: 2em;
     align-items: center;
 }
 
-.about-grid img {
-    max-width: 70%;
-    display: block;
-    margin-bottom: 1em;
+.about-image {
+    flex: 1;
+    text-align: center;
 }
 
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.about-bio {
+    flex: 1;
+    padding: 0 1em;
+}
+
+.about-bio p {
+    margin-bottom: 1.5em;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* ===== WORKS/HOBBY PAGE STYLES ===== */
+/* Introduction section styling */
 .hobby-intro {
     display: block;
     text-align: center;
 }
 
+/* Gallery section with CSS Grid layout */
 .gallery {
     display: block;
     text-align: center;
@@ -196,14 +264,16 @@ ul {
     margin-bottom: 1em;
 }
 
+/* CSS Grid Layout - Advanced CSS feature not covered in textbook */
+/* Responsive grid that automatically adjusts columns based on available space */
 .gallery > ul {
     list-style-type: none;
     padding-left: 0;
     margin-left: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2em;
+    justify-items: center;
 }
 
 .gallery li {
@@ -214,6 +284,8 @@ ul {
     text-decoration: none;
 }
 
+/* ===== VIDEO AND ARTICLE SECTIONS ===== */
+/* Latest videos section styling */
 #latest-videos {
     display: flex;
     flex-direction: column;
@@ -223,7 +295,7 @@ ul {
 
 #latest-videos ul {
     width: 100%;
-    max-width: 400px; /* or whatever width you want for the video area */
+    max-width: 400px;
     margin: 0 auto;
     padding: 0;
     display: flex !important;
@@ -245,10 +317,11 @@ ul {
     display: block;
     margin: 0 auto;
     width: 100%;
-    max-width: 100%; /* or whatever you want */
+    max-width: 100%;
     aspect-ratio: 16 / 9;
 }
 
+/* Latest articles section styling */
 #latest-articles {
     display: flex;
     flex-direction: column;
@@ -258,7 +331,7 @@ ul {
 
 #latest-articles ul {
     width: 100%;
-    max-width: 400px; /* or whatever width you want for the video area */
+    max-width: 400px;
     margin: 0 auto;
     padding: 0;
     display: flex !important;
@@ -282,28 +355,33 @@ ul {
     margin: 0 auto;
 }
 
-
-
-/*Style rules for footer content*/
+/* ===== FOOTER STYLES ===== */
+/* Site footer styling */
 footer {
     font-family: "Funnel Display", sans-serif;
     text-align: center;
     font-size: 0.85em;
-    background-color: #000000;
-    color: #ffffff;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     padding: 1% 0 1% 0;
-    
 }
 
 footer a {
-    color: #ffffff;
+    color: var(--secondary-color);
     text-decoration: none;
 }
 
-/* Media Query for Tablet Viewport */
+/* ===== RESPONSIVE MEDIA QUERIES ===== */
+
+/* Mobile Viewport (max-width: 619px) */
+@media screen and (max-width: 619px) {
+    /* Mobile-specific styles are already defined in the main CSS */
+}
+
+/* Tablet Viewport (min-width: 620px) */
 @media screen and (min-width: 620px) {
 
-    /* Tablet Viewport: Show tab-desk class, hide mobile class */
+    /* Show desktop elements, hide mobile elements */
     .tab-desk {
         display: block;
     }
@@ -312,7 +390,7 @@ footer a {
         display: none;
     }
 
-    /*Tablet viewport: Style rules for nav area */
+    /* Navigation - horizontal layout for tablet */
     nav li {
         border-top: none;
         display: inline-block;
@@ -323,6 +401,7 @@ footer a {
         padding: 0.5em;
     }
 
+    /* Table styling for accomplishments section */
     table.tab-desk {
         display: block;
         margin: 0 auto;
@@ -332,18 +411,18 @@ footer a {
         font-size: 1.25em;
         text-align: center;
         padding: 0.5em;
-        background-color: #ffffff;
-        color: #000000;
+        background-color: var(--secondary-color);
+        color: var(--text-color);
     }
 
     table.tab-desk th {
-        background-color: #000000;
-        color: #ffffff;
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
         text-align: center;
     }
 
     table.tab-desk td {
-        border: 1px solid #000000;
+        border: 1px solid var(--primary-color);
         padding: 0.5em;
         text-align: left;
     }
@@ -353,14 +432,16 @@ footer a {
     }
 
     table.tab-desk tr:nth-child(odd) {
-        background-color: #ffffff;
+        background-color: var(--secondary-color);
     }
 
+    /* Hover effect for table rows */
     table.tab-desk tr:hover {
-        background-color: #000000;
-        color: #ffffff;
+        background-color: var(--link-hover-bg);
+        color: var(--link-hover-color);
     }
 
+    /* Gallery layout for tablet */
     .gallery {
         display: flex;
         flex-direction: row;
@@ -368,63 +449,96 @@ footer a {
         align-items: flex-start;
         gap: 3em;
     }
+    
     #latest-videos, #latest-articles {
         width: 100%;
         max-width: 400px;
         min-width: 280px;
         margin: 0;
     }
+    
     #latest-videos ul, #latest-articles ul {
         max-width: 100%;
     }
+    
     .accomplishments {
         width: 100%;
         display: block;
         text-align: center;
     }
+    
     .accomplishments table {
         width: auto;
         max-width: 90%;
         margin-left: auto;
         margin-right: auto;
-        /* Optional: */
         display: table;
+    }
+    
+    /* Two-column layout for content rows */
+    .row {
+        flex-direction: row;
+        gap: 3em;
+    }
+    
+    .row > div {
+        flex: 1;
+        max-width: 50%;
+    }
+    
+    /* About page two-column layout */
+    .about-content {
+        flex-direction: row;
+        gap: 3em;
+        align-items: flex-start;
+    }
+    
+    .about-image {
+        max-width: 45%;
+    }
+    
+    .about-bio {
+        max-width: 55%;
     }
 }
 
-/* Media Query for Large Desktop Viewports */
+/* Large Desktop Viewport (min-width: 1921px) */
 @media screen and (min-width: 1921px) {
 
+    /* Gradient background for large screens */
     body {
-        background: linear-gradient(#ffffff, #000000);
+        background: linear-gradient(var(--secondary-color), var(--primary-color));
     }
 
+    /* Constrain width for ultra-wide screens */
     #wrapper {
         width: 1920px;
         margin: 0 auto;
     }
 
     header {
-        background-color: #ffffff;
+        background-color: var(--secondary-color);
     }
 
     main {
-        background-color: #ffffff;
+        background-color: var(--secondary-color);
     }
 }
 
-/* Media Query for Print */
+/* Print Media Query */
 @media print {
     
+    /* Print-optimized styling */
     body {
         background-color: white;
         color: black;
     }
 }
 
-/* Media Query for Desktop Viewport */
+/* Desktop Viewport (min-width: 1000px) */
 @media screen and (min-width: 1000px), print {
 
+    /* Show desktop elements, hide mobile elements */
     .tab-desk {
         display: block;
     }
@@ -433,7 +547,7 @@ footer a {
         display: none;
     }
 
-    /* Desktop Viewport: Style rules for nav area */
+    /* Navigation styling for desktop */
     nav li {
         font-size: 1.5em;
     }
@@ -442,11 +556,13 @@ footer a {
         padding: 0.5em 1.5em;
     }
 
+    /* Hover effects for navigation links */
     nav li a:hover {
-        color: #ffffff;
-        background-color: #000000;
+        color: var(--link-hover-color);
+        background-color: var(--link-hover-bg);
     }
 
+    /* Table styling for desktop */
     table {
         width: 80%;
         margin: 0 auto;
@@ -455,12 +571,38 @@ footer a {
         font-size: 1.25em;
         text-align: center;
         padding: 0.5em;
-        background-color: #ffffff;
+        background-color: var(--secondary-color);
     }
 
     .accomplishments {
         width: 100%;
         display: block;
         text-align: center;
+    }
+    
+    /* Enhanced two-column layout for desktop */
+    .row {
+        flex-direction: row;
+        gap: 4em;
+    }
+    
+    .row > div {
+        flex: 1;
+        max-width: 50%;
+    }
+    
+    /* About page enhanced two-column layout */
+    .about-content {
+        flex-direction: row;
+        gap: 4em;
+        align-items: flex-start;
+    }
+    
+    .about-image {
+        max-width: 40%;
+    }
+    
+    .about-bio {
+        max-width: 60%;
     }
 }
