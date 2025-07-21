@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+    Student Name: Will Southard
+    File Name: template
+    Date: 6/25/25
+-->
+<html lang = "en">
+<head>
+    <title>bs: example text</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="wrapper">
+
+        <!--Use the header area for the website name or logo. header info should be static-->
+        <header>
+            <div class="tab-desk">
+                <a href="index.html"><img src="images/bslogo.png" alt="bs logo"></a>
+            </div>
+            
+            <div class="mobile">
+                <a href="index.html"><img src="images/bslogo.png" alt="bs logo"></a>
+            </div>
+        </header>
+
+        <!--Use the nav area to add hyperlinks to other pages within the website-->
+        <nav>
+            <ul>
+                <li><a href="index.html">home</a></li> 
+                <li><a href="about.html">about</a></li> 
+                <li><a href="hobby.html">works</a></li> 
+            </ul>
+        </nav>
+
+        <!--Use the main area to add the main content to the webpage-->
+        <main>
+            <section class="hobby-intro">
+                <h1>brock's works</h1>
+                <p>
+                    <!-- 150+ words intro to hobby -->
+                    Brock Swinson is a freelance writer and author who hosts the podcast and YouTube series, Creative Principles, which features audio interviews from screenwriters, actors, and directors. Swinson has curated the combined advice from 200+ interviews for his debut non-fiction book 'Ink by the Barrel' which provides advice for those seeking a career as a prolific writer.
+                </p>
+            </section>
+
+            <section class="gallery">
+                <!-- div for latest videos -->
+                <div id="latest-videos">
+                    <h2>Latest Videos</h2>
+                    <div class="video-list"></div>
+                </div>
+                <!-- Latest videos from Brock's YouTube channel -->
+                <script>
+                    fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?channel_id=UCBUux6BkhC-dtP4Vj1GcgMA')
+                    .then(response => response.json())
+                    .then(data => {
+                        const videos = data.items.slice(0, 3); // Get latest 3 videos
+                        let html = '<ul style="list-style-type:none;padding:0;display:flex;flex-direction:column;align-items:center;gap:2em;">';
+                        videos.forEach(video => {
+                        // Extract the video ID from the link
+                        const videoId = video.link.split('v=')[1];
+                        html += `<li style="text-align:center;">
+                            <iframe width="320" height="180"
+                            src="https://www.youtube.com/embed/${videoId}"
+                            title="${video.title}" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                            <br>
+                            <a href="${video.link}" target="_blank">${video.title}</a>
+                        </li>`;
+                        });
+                        html += '</ul>';
+                        document.getElementById('latest-videos').querySelector('.video-list').innerHTML = html;                    });
+                </script>
+
+                <div id="latest-articles">
+                    <h2>Latest Articles</h2>
+                    <ul>
+                        <li>
+                            <a href="https://www.brockswinson.com/p/people-like-us-do-things-like-this" target="_blank"><img src="images/seth.jpg" alt="Seth with Glasses">People Like Us Do Things Like This</a>
+                        </li>
+                        <li>
+                            <a href="https://www.brockswinson.com/p/i-cracked-instagram-in-21-days" target="_blank"><img src="images/aziz.jpg" alt="Aziz with Heart Eyes">I Cracked Instagram in 21 Days</a>
+                        </li>
+                        <li>
+                            <a href="https://www.brockswinson.com/p/moneyball-philosophy" target="_blank"><img src="images/moneyball.jpg" alt="Moneyball Philosophy">Moneyball Philosophy</a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </section>
+        </main>
+
+        <!--Use the footer area to add webpage footer content-->
+        <footer>
+            <p>&copy; Copyright 2025. All Rights Reserved.</p>
+            <p><a href="mailto:brockswinson@gmail.com">brockswinson@gmail.com</a></p>
+        </footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,466 @@
+/*
+Author: Will Southard
+Date: 6/25/25
+File Name: styles.css
+*/
+
+/*CSS Reset*/
+body, header, nav, main, footer, img, h1, h3, ul, table, td, th, tr, li, a, iframe{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+#wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/*Style rules for body and images*/
+body {
+    background-color: #ffffff;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/*Style rules for mobile viewport*/
+
+/*Style rules to show mobile class and hide tab-desk class*/
+.mobile {
+	display: block;
+}
+
+.tab-desk {
+	display: none;
+}
+
+/*Style rules for header area*/
+
+img {
+    max-width: 15%;
+    display: block;
+    margin: auto;
+}
+
+.mobile img {
+    max-width: 20%;
+    display: block;
+    margin: auto;
+}
+
+.mobile h1 h3 {
+	padding: 2%;
+	text-align: center;
+}
+
+.mobile h1 {
+    font-family: "Funnel Display", sans-serif;
+}
+
+.mobile h3 {
+	font-family: "Funnel Display", sans-serif;
+}
+
+/*Style rules for navigation area*/
+nav {
+    background-color: #ffffff;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    border-top: 0.2em solid #000000;
+    border-bottom: 0.2em solid #000000;
+}
+
+nav li {
+    display: block;
+    font-size: 1.5em;
+    font-family: "Funnel Display", sans-serif;
+    font-weight: bold;
+	border-top: 0.5px solid #000000;
+}
+
+nav li a {
+    display: block;
+    color: #000000;
+    padding: 0.5em 2em;
+    text-decoration: none;
+}
+
+/*Style rules for main content*/
+main {
+    padding: 2%;
+    font-family: "Funnel Display", sans-serif;
+    margin: 0 auto;
+}
+
+main p {
+    font-size: 1.1em;
+}
+
+main h3 {
+    padding: 2%;
+}
+
+main ul {
+    list-style-type: square;
+}
+
+ul.mobile {
+    margin-left: 10%;
+    max-width: 80%;
+    text-align: left;
+    padding-bottom: 1em;
+}
+
+.link {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.action {
+    font-size: 1.75em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.round {
+	border-radius: 6px;
+}
+
+ul {
+	margin-left: 10%;
+    max-width: 80%;
+    text-align: left;
+}
+
+.hero, .goals, .accomplishments {
+    display: block;
+    text-align: center;
+}
+
+.hero img {
+    max-width: 40%;
+    display: block;
+}
+
+.accomplishments {
+    width: 100%;
+}
+
+.about-intro {
+    display: block;
+    text-align: center;
+}
+
+.about-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-grid img {
+    max-width: 70%;
+    display: block;
+    margin-bottom: 1em;
+}
+
+.hobby-intro {
+    display: block;
+    text-align: center;
+}
+
+.gallery {
+    display: block;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.gallery > ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2em;
+}
+
+.gallery li {
+    text-align: center;
+}
+
+.gallery li a {
+    text-decoration: none;
+}
+
+#latest-videos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#latest-videos ul {
+    width: 100%;
+    max-width: 400px; /* or whatever width you want for the video area */
+    margin: 0 auto;
+    padding: 0;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center;
+    gap: 2em;
+    list-style-type: none;
+}
+
+#latest-videos li {
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 0.5em;
+}
+
+#latest-videos iframe {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%; /* or whatever you want */
+    aspect-ratio: 16 / 9;
+}
+
+#latest-articles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#latest-articles ul {
+    width: 100%;
+    max-width: 400px; /* or whatever width you want for the video area */
+    margin: 0 auto;
+    padding: 0;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center;
+    gap: 2em;
+    list-style-type: none;
+}
+
+#latest-articles li {
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 0.5em;
+}
+
+#latest-articles img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+/*Style rules for footer content*/
+footer {
+    font-family: "Funnel Display", sans-serif;
+    text-align: center;
+    font-size: 0.85em;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 1% 0 1% 0;
+    
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Media Query for Tablet Viewport */
+@media screen and (min-width: 620px) {
+
+    /* Tablet Viewport: Show tab-desk class, hide mobile class */
+    .tab-desk {
+        display: block;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    /*Tablet viewport: Style rules for nav area */
+    nav li {
+        border-top: none;
+        display: inline-block;
+        font-size: 2em;
+    }
+
+    nav li a {
+        padding: 0.5em;
+    }
+
+    table.tab-desk {
+        display: block;
+        margin: 0 auto;
+        width: 90%;
+        border-collapse: collapse;
+        margin-bottom: 1em;
+        font-size: 1.25em;
+        text-align: center;
+        padding: 0.5em;
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    table.tab-desk th {
+        background-color: #000000;
+        color: #ffffff;
+        text-align: center;
+    }
+
+    table.tab-desk td {
+        border: 1px solid #000000;
+        padding: 0.5em;
+        text-align: left;
+    }
+
+    table.tab-desk tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    table.tab-desk tr:nth-child(odd) {
+        background-color: #ffffff;
+    }
+
+    table.tab-desk tr:hover {
+        background-color: #000000;
+        color: #ffffff;
+    }
+
+    .gallery {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 3em;
+    }
+    #latest-videos, #latest-articles {
+        width: 100%;
+        max-width: 400px;
+        min-width: 280px;
+        margin: 0;
+    }
+    #latest-videos ul, #latest-articles ul {
+        max-width: 100%;
+    }
+    .accomplishments {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+    .accomplishments table {
+        width: auto;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        /* Optional: */
+        display: table;
+    }
+}
+
+/* Media Query for Large Desktop Viewports */
+@media screen and (min-width: 1921px) {
+
+    body {
+        background: linear-gradient(#ffffff, #000000);
+    }
+
+    #wrapper {
+        width: 1920px;
+        margin: 0 auto;
+    }
+
+    header {
+        background-color: #ffffff;
+    }
+
+    main {
+        background-color: #ffffff;
+    }
+}
+
+/* Media Query for Print */
+@media print {
+    
+    body {
+        background-color: white;
+        color: black;
+    }
+}
+
+/* Media Query for Desktop Viewport */
+@media screen and (min-width: 1000px), print {
+
+    .tab-desk {
+        display: block;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    /* Desktop Viewport: Style rules for nav area */
+    nav li {
+        font-size: 1.5em;
+    }
+
+    nav li a {
+        padding: 0.5em 1.5em;
+    }
+
+    nav li a:hover {
+        color: #ffffff;
+        background-color: #000000;
+    }
+
+    table {
+        width: 80%;
+        margin: 0 auto;
+        border-collapse: collapse;
+        margin-bottom: 1em;
+        font-size: 1.25em;
+        text-align: center;
+        padding: 0.5em;
+        background-color: #ffffff;
+    }
+
+    .accomplishments {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+}
